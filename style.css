@@ -1,0 +1,81 @@
+*{
+    outline: none;
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container .accordion {
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-flow: nowrap column;
+}
+.container .accordion .item {
+    display: flex;
+    flex-direction: column;
+}
+.container .accordion .item .accordionBtn {
+    transition: all .7s ease-in-out;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    width: 100%;
+    color: rgb(117, 117, 117);
+    text-align: left;
+    border: none;
+    font-size: 1.3rem;
+    padding: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .accordion .item .content {
+    max-height: 0;
+    padding: 0 20px;
+    display: block;
+    background-color: #d6d6d6;
+    transition: max-height .3s ease-in-out;
+    overflow: hidden;
+}
+.container .accordion .item .content h1 {
+    margin-top: 20px;
+}
+.container .accordion .item .content p {
+    margin-bottom: 20px;
+}
+.container .accordion .item .accordionBtn:hover, 
+.container .accordion .item .accordionBtn.active button {
+    background-color: rgb(43 35 35);
+    color: white;
+}
+.container .accordion .item .accordionBtn .icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .accordion .item .accordionBtn .icon:before, 
+.container .accordion .item .accordionBtn .icon:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    height: 3px;
+    width: 15px;
+    background-color:red;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+} 
+.container .accordion .item .accordionBtn .icon:before {
+    transform:rotate(90deg);
+}
+.container .accordion .item.active button .icon::before, 
+.container .accordion .item.active button .icon::after {
+    transform:rotate(360deg);
+} 
